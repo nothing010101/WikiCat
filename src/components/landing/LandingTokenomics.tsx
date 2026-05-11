@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const dist = [
   { label: "Founder Pass Mint", pct: 50, color: "bg-purple-500", emoji: "🎟️", note: "Minted progressively — 1M per slot" },
@@ -27,7 +28,7 @@ export function LandingTokenomics() {
           <span className="text-purple-700 font-bold">If the mint period ends before all slots are filled, unfilled tokens are never minted and ETH is automatically refunded.</span>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
           <div className="space-y-5">
             {dist.map((item, i) => (
               <motion.div key={item.label} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }}
@@ -66,8 +67,16 @@ export function LandingTokenomics() {
             </div>
           </motion.div>
         </div>
+
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          className="text-center mt-12">
+          className="flex flex-col items-center gap-8">
+          <Image
+            src="/images/cat-space.png"
+            alt="Wikicat in space with coins"
+            width={320}
+            height={320}
+            className="w-48 md:w-64 drop-shadow-2xl rounded-3xl"
+          />
           <a href="/mint" className="inline-block px-10 py-4 bg-yellow-400 hover:bg-yellow-300 text-black font-black text-lg rounded-full shadow-lg hover:scale-105 transition-all">
             🐱 Mint Your Pass →
           </a>
