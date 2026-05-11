@@ -75,12 +75,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-wiki-border pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-wiki-border pt-6 flex justify-center">
           <p className="text-xs text-gray-600">
-            © 2025 Wikicat. All rights reserved.
-          </p>
-          <p className="text-xs text-gray-600">
-            This is not financial advice. Crypto assets carry risk. Do your own research.
+            © 2026 Wikicat. All rights reserved
           </p>
         </div>
       </div>
