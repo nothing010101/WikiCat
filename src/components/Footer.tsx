@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -8,13 +9,17 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 rounded-full bg-gradient-to-br from-wiki-yellow to-wiki-orange flex items-center justify-center text-black font-black text-xs">
-                W
-              </div>
+            <a href="/" className="flex items-center gap-2 mb-3">
+              <Image
+                src="/images/logo.png"
+                alt="Wikicat"
+                width={28}
+                height={28}
+                className="w-7 h-7 rounded-full object-cover"
+              />
               <span className="font-black text-white">Wikicat</span>
               <span className="text-wiki-yellow text-sm">$WIKI</span>
-            </div>
+            </a>
             <p className="text-gray-500 text-sm leading-relaxed">
               The community meme token of Base Chain. 10 Billion supply.
               5,000 Founder slots. Built on-chain, forever.
@@ -27,8 +32,8 @@ export function Footer() {
             </p>
             <div className="space-y-2">
               {[
-                { label: "Basescan — $WIKI", href: "#" },
-                { label: "Basescan — Founder NFT", href: "#" },
+                { label: "Basescan — $WIKI", href: "https://basescan.org/address/0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef" },
+                { label: "Basescan — Founder NFT", href: "https://basescan.org/address/0x5ff980e0d8b1ed57427cb1f44039649f7910327b" },
                 { label: "OpenSea Collection", href: "#" },
                 { label: "Source Code (GitHub)", href: "#" },
               ].map((link) => (
@@ -72,11 +77,10 @@ export function Footer() {
 
         <div className="border-t border-wiki-border pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-gray-600">
-            © 2024 Wikicat. All rights reserved.
+            © 2025 Wikicat. All rights reserved.
           </p>
           <p className="text-xs text-gray-600">
-            This is not financial advice. Crypto assets carry risk. Do your own
-            research.
+            This is not financial advice. Crypto assets carry risk. Do your own research.
           </p>
         </div>
       </div>
