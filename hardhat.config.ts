@@ -19,6 +19,7 @@ const config: HardhatUserConfig = {
         enabled: true,
         runs: 200,
       },
+      evmVersion: "cancun",
     },
   },
   networks: {
@@ -37,16 +38,13 @@ const config: HardhatUserConfig = {
     },
   },
   etherscan: {
-    apiKey: {
-      base: BASESCAN_API_KEY,
-      baseSepolia: BASESCAN_API_KEY,
-    },
+    apiKey: BASESCAN_API_KEY,
     customChains: [
       {
         network: "base",
         chainId: 8453,
         urls: {
-          apiURL: "https://api.basescan.org/api",
+          apiURL: "https://api.basescan.org/v2/api",
           browserURL: "https://basescan.org",
         },
       },
@@ -54,7 +52,7 @@ const config: HardhatUserConfig = {
         network: "baseSepolia",
         chainId: 84532,
         urls: {
-          apiURL: "https://api-sepolia.basescan.org/api",
+          apiURL: "https://api-sepolia.basescan.org/v2/api",
           browserURL: "https://sepolia.basescan.org",
         },
       },
