@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useAccount, useReadContract } from "wagmi";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { ConnectButton } from "@/components/ConnectButton";
 import { formatEther } from "viem";
 import { LayoutDashboard, Coins, ImageIcon, BarChart3 } from "lucide-react";
 import {
@@ -89,12 +89,11 @@ export function Dashboard() {
               Connect your wallet to view your holdings and mint status.
             </p>
             <div className="flex justify-center">
-              <ConnectButton />
+              <ConnectButton label="Connect Wallet" />
             </div>
           </motion.div>
         ) : (
           <div className="space-y-6">
-            {/* Address */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -118,7 +117,6 @@ export function Dashboard() {
               </div>
             </motion.div>
 
-            {/* Stats grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 {
@@ -175,7 +173,6 @@ export function Dashboard() {
               })}
             </div>
 
-            {/* Wallet limit bar */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -205,7 +202,6 @@ export function Dashboard() {
               </p>
             </motion.div>
 
-            {/* Links */}
             <div className="grid grid-cols-2 gap-4">
               <a
                 href={`https://basescan.org/token/${CONTRACT_ADDRESSES.wikiToken}?a=${address}`}
