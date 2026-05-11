@@ -26,6 +26,13 @@ export function ConnectButton({ label = "Connect Wallet" }: ConnectButtonProps) 
 
   const isWrongChain = isConnected && chainId !== base.id;
 
+  // Auto-switch to Base when connected on wrong chain
+  useEffect(() => {
+    if (isConnected && chainId !== base.id && !isSwitching) {
+      switchChain({ chainId: base.id });
+    }
+  }, [isConnected, chainId, isSwitching, switchChain]);
+
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
@@ -49,7 +56,7 @@ export function ConnectButton({ label = "Connect Wallet" }: ConnectButtonProps) 
     }
   };
 
-  // Wrong chain — show switch button
+  // Wrong chain — show manual switch button as fallback
   if (isWrongChain) {
     return (
       <button
@@ -58,7 +65,7 @@ export function ConnectButton({ label = "Connect Wallet" }: ConnectButtonProps) 
         className="flex items-center gap-2 px-4 py-2 rounded-xl bg-wiki-orange/20 border border-wiki-orange/40 text-wiki-orange font-bold text-sm hover:bg-wiki-orange/30 transition-all disabled:opacity-50"
       >
         <AlertTriangle size={14} />
-        {isSwitching ? "Switching..." : "Switch to Base"}
+        {isSwitching ? "Switching to Base..." : "Switch to Base"}
       </button>
     );
   }
@@ -146,7 +153,8 @@ export function ConnectButton({ label = "Connect Wallet" }: ConnectButtonProps) 
             <button
               key={connector.uid}
               onClick={() => {
-                connect({ connector });
+                // Pass chainId: base.id so wagmi forces Base Chain on connect
+                connect({ connector, chainId: base.id });
                 setShowWallets(false);
               }}
               disabled={isPending}
