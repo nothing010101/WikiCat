@@ -1,8 +1,9 @@
 "use client";
 
-import { useAccount, useConnect, useDisconnect, useBalance } from "wagmi";
+import { useAccount, useConnect, useDisconnect, useBalance, useChainId, useSwitchChain } from "wagmi";
 import { useState, useEffect, useRef } from "react";
-import { Wallet, ChevronDown, LogOut, Copy, Check, ExternalLink } from "lucide-react";
+import { Wallet, ChevronDown, LogOut, Copy, Check, ExternalLink, AlertTriangle } from "lucide-react";
+import { base } from "@/lib/wagmi";
 
 interface ConnectButtonProps {
   label?: string;
@@ -15,11 +16,15 @@ export function ConnectButton({ label = "Connect Wallet" }: ConnectButtonProps) 
   const { address, isConnected } = useAccount();
   const { connect, connectors, isPending } = useConnect();
   const { disconnect } = useDisconnect();
-  const { data: balance } = useBalance({ address, chainId: 8453 });
+  const chainId = useChainId();
+  const { switchChain, isPending: isSwitching } = useSwitchChain();
+  const { data: balance } = useBalance({ address, chainId: base.id });
   const [showMenu, setShowMenu] = useState(false);
   const [showWallets, setShowWallets] = useState(false);
   const [copied, setCopied] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  const isWrongChain = isConnected && chainId !== base.id;
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -44,6 +49,20 @@ export function ConnectButton({ label = "Connect Wallet" }: ConnectButtonProps) 
     }
   };
 
+  // Wrong chain — show switch button
+  if (isWrongChain) {
+    return (
+      <button
+        onClick={() => switchChain({ chainId: base.id })}
+        disabled={isSwitching}
+        className="flex items-center gap-2 px-4 py-2 rounded-xl bg-wiki-orange/20 border border-wiki-orange/40 text-wiki-orange font-bold text-sm hover:bg-wiki-orange/30 transition-all disabled:opacity-50"
+      >
+        <AlertTriangle size={14} />
+        {isSwitching ? "Switching..." : "Switch to Base"}
+      </button>
+    );
+  }
+
   if (isConnected && address) {
     return (
       <div className="relative" ref={menuRef}>
@@ -60,7 +79,7 @@ export function ConnectButton({ label = "Connect Wallet" }: ConnectButtonProps) 
           <div className="absolute right-0 top-full mt-2 w-52 bg-wiki-card border border-wiki-border rounded-xl p-2 shadow-2xl z-50">
             {balance && (
               <div className="px-3 py-2 mb-1 border-b border-wiki-border">
-                <p className="text-xs text-gray-500">Balance</p>
+                <p className="text-xs text-gray-500">Balance (Base)</p>
                 <p className="text-sm text-white font-bold">
                   {parseFloat(balance.formatted).toFixed(4)} ETH
                 </p>
