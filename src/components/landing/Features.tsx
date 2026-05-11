@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const features = [
   {
     title: "FAIR LAUNCH",
-    description: "No pre-mine, no team allocation, no presale. Every $WIKI token is minted through the public Founder Pass — completely transparent and on-chain.",
+    description: "No presale, no VC round. Every $WIKI entering circulation is minted through the public Founder Pass — fully on-chain and verifiable from day one.",
     emoji: "🚀",
     grad: "from-pink-400 to-rose-400",
     bg: "bg-pink-50",
@@ -45,12 +45,6 @@ export function Features() {
             <motion.div key={f.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ delay: i * 0.15 }}
               className={`relative ${f.bg} border-2 ${f.border} rounded-3xl p-8 text-center hover:scale-105 transition-transform shadow-sm`}>
-              {/*
-                === IMAGE PLACEHOLDER: Cat ear decoration (optional) ===
-                Files: /public/images/cat-ear-pink.png | cat-ear-blue.png | cat-ear-yellow.png  (~100x80px transparent PNG)
-                Replace the badge div below with:
-                <img src="/images/cat-ear-pink.png" className="absolute -top-8 left-1/2 -translate-x-1/2 h-14 w-auto" />
-              */}
               <div className={`absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-gradient-to-br ${f.grad} rounded-full flex items-center justify-center text-white text-sm shadow-md`}>
                 {f.emoji}
               </div>
