@@ -5,12 +5,6 @@ export function WhatIsWiki() {
   return (
     <section id="about" className="py-20 bg-white">
       <div className="max-w-5xl mx-auto px-4 text-center">
-        {/*
-          === IMAGE PLACEHOLDER: Logo (large centered) ===
-          File: /public/images/logo.png  (transparent PNG ~300x100px)
-          Replace the div below with:
-          <img src="/images/logo.png" alt="Wikicat" className="h-20 w-auto mx-auto mb-8" />
-        */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="flex justify-center mb-8">
           <div className="h-20 w-52 bg-purple-50 border-2 border-dashed border-purple-300 rounded-xl flex flex-col items-center justify-center">
@@ -24,15 +18,14 @@ export function WhatIsWiki() {
         </motion.h2>
         <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
           className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto mb-4">
-          Wikicat ($WIKI) is a community-driven meme token built on Base Chain.
-          Inspired by the internet&apos;s love of cats, we&apos;re creating a fun and fair
-          ecosystem where early supporters are rewarded through our Founder Pass NFT mint.
+          Wikicat ($WIKI) is a meme token on Base Chain built around the internet&apos;s oldest obsession — cats.
+          Early supporters get in through the Founder Pass NFT mint, the only way new $WIKI enters circulation.
         </motion.p>
         <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}
           className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto mb-10">
-          Each Founder Pass grants you <strong className="text-purple-700">1 NFT + 1,000,000 $WIKI tokens</strong> — completely on-chain,
-          transparent, and yours forever. No VCs. No presale. No funny business.
-          Just a cat, some coins, and <strong className="text-purple-700">5,000 slots</strong> for the people who show up first.
+          Each Founder Pass grants you <strong className="text-purple-700">1 NFT + 1,000,000 $WIKI tokens</strong> — on-chain,
+          transparent, yours forever. Only <strong className="text-purple-700">5,000 slots</strong>. First come, first served.
+          The mint has a time limit — when the countdown ends, any unfilled slots are gone and ETH is refunded automatically.
         </motion.p>
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}
           className="flex flex-wrap justify-center gap-4">
