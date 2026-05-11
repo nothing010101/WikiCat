@@ -1,19 +1,15 @@
 "use client";
+import Image from "next/image";
 
 export function LandingFooter() {
   return (
     <footer className="bg-gradient-to-r from-purple-800 to-purple-700 text-white py-12">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/*
-            === IMAGE PLACEHOLDER: Footer logo ===
-            File: /public/images/logo.png
-            Replace the div below with: <img src="/images/logo.png" alt="Wikicat" className="h-12 w-auto" />
-          */}
-          <div className="h-12 w-36 bg-white/20 border-2 border-dashed border-white/40 rounded-lg flex flex-col items-center justify-center">
-            <span className="text-white text-xs font-bold">LOGO HERE</span>
-            <span className="text-white/50 text-xs">/public/images/logo.png</span>
-          </div>
+          <a href="/" className="flex items-center gap-3">
+            <Image src="/images/logo.png" alt="Wikicat" width={48} height={48} className="h-12 w-12 rounded-full object-cover" />
+            <span className="text-white font-black text-xl">WIKICAT</span>
+          </a>
           <div className="flex flex-wrap justify-center gap-5 text-sm">
             {[
               { href: "/mint", label: "Mint" },
