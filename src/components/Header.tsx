@@ -1,6 +1,5 @@
 "use client";
 
-import { ConnectButton } from "@/components/ConnectButton";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -28,9 +27,7 @@ export function Header() {
 
         <nav className="hidden md:flex items-center gap-6 text-sm text-gray-400">
           <a href="/" className="hover:text-wiki-yellow transition-colors">Home</a>
-          <a href="#mint" className="hover:text-wiki-yellow transition-colors">Mint</a>
           <a href="#how-it-works" className="hover:text-wiki-yellow transition-colors">How It Works</a>
-          <a href="#dashboard" className="hover:text-wiki-yellow transition-colors">Dashboard</a>
           <a href="/docs" className="hover:text-wiki-yellow transition-colors font-medium">Docs</a>
         </nav>
 
@@ -38,7 +35,10 @@ export function Header() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <ConnectButton chainStatus="icon" showBalance={false} accountStatus="avatar" />
+          <a href="https://x.com/wikibasedcat" target="_blank" rel="noopener noreferrer"
+            className="px-4 py-2 rounded-xl font-black text-sm bg-gradient-to-r from-wiki-yellow to-wiki-orange text-black hover:opacity-90 transition-all">
+            🐱 Follow Us
+          </a>
         </motion.div>
       </div>
     </header>
