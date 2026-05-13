@@ -1,35 +1,35 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Wallet, CreditCard, Coins, Trophy } from "lucide-react";
+import { Coins, Gift, ShoppingCart, Store } from "lucide-react";
 
 const STEPS = [
   {
-    icon: Wallet,
-    title: "Connect Your Wallet",
+    icon: Coins,
+    title: "Get $WIKI",
     description:
-      "Connect with MetaMask, Coinbase Wallet, or any WalletConnect-compatible wallet on Base network.",
+      "Buy $WIKI on Base Chain via DEX. The token is launched 100% on LP via bankr.bot — fair and open to everyone.",
     color: "#FFD700",
   },
   {
-    icon: CreditCard,
-    title: "Choose Your Slots",
+    icon: Gift,
+    title: "Earn NFT Rewards",
     description:
-      "Select 1–30 slots. Each slot costs 0.0011 ETH. You can mint up to 30 slots per wallet address.",
+      "Hold $WIKI and qualify for exclusive Wikicat NFT airdrops. The more you hold, the more you can earn.",
     color: "#00FF87",
   },
   {
-    icon: Coins,
-    title: "Confirm & Mint",
+    icon: ShoppingCart,
+    title: "Buy NFTs via Web",
     description:
-      "Confirm the transaction in your wallet. The smart contract sends your NFT and $WIKI tokens instantly.",
+      "Prefer to buy directly? Wikicat NFTs will also be purchasable through the website — simple and straightforward.",
     color: "#7C3AED",
   },
   {
-    icon: Trophy,
-    title: "Become a Founder",
+    icon: Store,
+    title: "Trade on Marketplaces",
     description:
-      "Receive 1 Founder NFT + 1,000,000 $WIKI per slot. You are now part of the Wikicat founding community.",
+      "All Wikicat NFTs are standard ERC-721 tokens on Base. List and trade them on any compatible NFT marketplace.",
     color: "#FF6B00",
   },
 ];
@@ -51,12 +51,11 @@ export function HowItWorks() {
             How It <span className="gradient-text">Works</span>
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
-            Four simple steps to secure your Founder Pass and $WIKI tokens.
+            Get $WIKI, earn exclusive NFTs as rewards, or buy them directly via the website.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-4 gap-6 relative">
-          {/* Connector line */}
           <div className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-wiki-yellow/20 via-wiki-green/20 to-wiki-orange/20" />
 
           {STEPS.map((step, i) => {
@@ -91,7 +90,6 @@ export function HowItWorks() {
           })}
         </div>
 
-        {/* FAQ / notes */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -101,15 +99,15 @@ export function HowItWorks() {
           {[
             {
               q: "Which network?",
-              a: "Base mainnet (Chain ID 8453). Make sure your wallet is on Base before minting.",
+              a: "Base mainnet (Chain ID 8453). Make sure your wallet is on Base before trading.",
             },
             {
-              q: "When do I get tokens?",
-              a: "Instantly. Your NFT and $WIKI tokens are sent atomically in the same transaction.",
+              q: "How do I get the NFT airdrop?",
+              a: "Hold $WIKI in your wallet. NFTs will be airdropped to qualifying holders — stay tuned on Twitter/X for details.",
             },
             {
-              q: "Can I transfer my NFT?",
-              a: "Yes. The Founder NFT is a standard ERC721 and can be transferred or listed on NFT marketplaces.",
+              q: "Can I sell my NFT?",
+              a: "Yes. Wikicat NFTs are standard ERC-721 tokens and can be transferred or listed on any NFT marketplace.",
             },
           ].map((faq) => (
             <div key={faq.q}>
