@@ -2,8 +2,21 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Users } from "lucide-react";
-import { useReadContract } from "wagmi";
-import { MINT_CONTRACT_ABI, CONTRACT_ADDRESSES } from "@/lib/contracts";
+
+const STORAGE_KEY = "wikicat_vote_deadline";
+const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000;
+
+function getOrCreateDeadline(): number {
+  if (typeof window === "undefined") return Date.now() + SEVEN_DAYS_MS;
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored) {
+    const parsed = parseInt(stored, 10);
+    if (!isNaN(parsed)) return parsed;
+  }
+  const deadline = Date.now() + SEVEN_DAYS_MS;
+  localStorage.setItem(STORAGE_KEY, String(deadline));
+  return deadline;
+}
 
 function getTimeLeft(deadlineMs: number) {
   const diff = deadlineMs - Date.now();
@@ -18,37 +31,29 @@ function getTimeLeft(deadlineMs: number) {
 }
 
 function Pad({ n }: { n: number }) {
-  return <>{String(n).padStart(2, "00")}</>;
+  return <>{String(n).padStart(2, "0")}</>;
 }
 
 export function MintCountdown() {
-  const { data: deadlineRaw } = useReadContract({
-    address: CONTRACT_ADDRESSES.mintContract,
-    abi: MINT_CONTRACT_ABI,
-    functionName: "mintDeadline",
-  });
-
-  const mintDeadlineMs = deadlineRaw ? Number(deadlineRaw) * 1000 : 0;
-  // Vote period = 7 days AFTER mint deadline ends
-  const voteDeadlineMs = mintDeadlineMs > 0 ? mintDeadlineMs + 7 * 24 * 60 * 60 * 1000 : 0;
-
+  const [deadline, setDeadline] = useState<number | null>(null);
   const [voteTime, setVoteTime] = useState({ days: 7, hours: 0, minutes: 0, seconds: 0, ended: false });
 
   useEffect(() => {
-    if (!voteDeadlineMs) return;
-    const tick = () => {
-      setVoteTime(getTimeLeft(voteDeadlineMs));
-    };
+    const dl = getOrCreateDeadline();
+    setDeadline(dl);
+  }, []);
+
+  useEffect(() => {
+    if (!deadline) return;
+    const tick = () => setVoteTime(getTimeLeft(deadline));
     tick();
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
-  }, [voteDeadlineMs]);
+  }, [deadline]);
 
   return (
     <section className="py-12 px-4">
       <div className="max-w-3xl mx-auto">
-
-        {/* Vote Countdown — 7 days after mint ends */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +101,6 @@ export function MintCountdown() {
             )}
           </div>
         </motion.div>
-
       </div>
     </section>
   );
