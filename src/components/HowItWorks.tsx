@@ -8,7 +8,7 @@ const STEPS = [
     icon: Coins,
     title: "Get $WIKI",
     description:
-      "Buy $WIKI on Base Chain via DEX. The token is launched 100% on LP via bankr.bot — fair and open to everyone.",
+      "Buy $WIKI on Base Chain via DEX. The token is launched 100% on LP via ape.store — fair and open to everyone.",
     color: "#FFD700",
   },
   {
