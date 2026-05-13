@@ -7,26 +7,19 @@ export function LandingFooter() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <a href="/" className="flex items-center gap-3">
-            <Image
-              src="/images/logo.png"
-              alt="Wikicat"
-              width={44}
-              height={44}
-              className="w-11 h-11 rounded-full object-cover"
-            />
+            <Image src="/images/logo.png" alt="Wikicat" width={44} height={44} className="w-11 h-11 rounded-full object-cover" />
             <div>
               <span className="font-black text-white text-lg tracking-tight">Wikicat</span>
               <span className="text-wiki-yellow font-bold ml-1.5 text-sm">$WIKI</span>
             </div>
           </a>
-
           <div className="flex flex-wrap justify-center gap-6 text-sm">
             {[
               { href: "/mint", label: "Mint" },
               { href: "#about", label: "About" },
               { href: "#tokenomics", label: "Tokenomics" },
               { href: "#faq", label: "FAQ" },
-              { href: "https://basescan.org/token/0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef", label: "Basescan", ext: true },
+              { href: "https://basescan.org/token/0xB97f69Cb79978725E3e20e72b024639e7173A44F", label: "Basescan", ext: true },
             ].map((link) => (
               <a key={link.label} href={link.href}
                 target={link.ext ? "_blank" : undefined}
@@ -36,7 +29,6 @@ export function LandingFooter() {
               </a>
             ))}
           </div>
-
           <div className="flex gap-3">
             <a href="https://x.com/wikibasedcat" className="w-10 h-10 bg-wiki-dark border border-wiki-border hover:border-wiki-yellow/40 rounded-full flex items-center justify-center transition-colors" title="Twitter/X">
               <svg viewBox="0 0 24 24" className="w-4 h-4 fill-gray-400">
@@ -45,17 +37,14 @@ export function LandingFooter() {
             </a>
           </div>
         </div>
-
         <div className="mt-8 pt-6 border-t border-wiki-border text-center space-y-1">
           <p className="text-gray-600 text-xs">$WIKI Token Contract (Base Mainnet)</p>
-          <a href="https://basescan.org/token/0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef"
+          <a href="https://basescan.org/token/0xB97f69Cb79978725E3e20e72b024639e7173A44F"
             target="_blank" rel="noopener noreferrer"
             className="text-gray-500 hover:text-wiki-yellow text-xs font-mono transition-colors">
-            0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef
+            0xB97f69Cb79978725E3e20e72b024639e7173A44F
           </a>
-          <p className="text-gray-700 text-xs mt-4">
-            © 2026 Wikicat. All rights reserved
-          </p>
+          <p className="text-gray-700 text-xs mt-4">© 2026 Wikicat. All rights reserved</p>
         </div>
       </div>
     </footer>
