@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Header } from "@/components/Header";
 import { Stats } from "@/components/Stats";
 import { MintSection } from "@/components/MintSection";
+import { MintCountdown } from "@/components/MintCountdown";
 import { NftScroller } from "@/components/NftScroller";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Dashboard } from "@/components/Dashboard";
@@ -81,6 +82,7 @@ export default function MintPage() {
           </motion.div>
         </div>
       </section>
+      <MintCountdown />
       <Stats />
       <MintSection />
       <NftScroller />
