@@ -40,8 +40,8 @@ export function WhatIsWiki() {
               className="text-gray-400 text-lg leading-relaxed mb-4"
             >
               Wikicat ($WIKI) is a meme token on Base Chain built around the internet&apos;s oldest obsession — cats.
-              100 billion $WIKI launched directly to liquidity via{" "}
-              <span className="text-wiki-yellow font-bold">bankr.bot</span> — no team cut, no presale, 100% community-owned.
+              1 billion $WIKI launched directly to liquidity via{" "}
+              <span className="text-wiki-yellow font-bold">ape.store</span> — no team cut, no presale, 100% community-owned.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -65,7 +65,7 @@ export function WhatIsWiki() {
                 className="px-6 py-3 rounded-xl bg-gradient-to-r from-wiki-yellow to-wiki-orange text-black font-bold transition-all hover:opacity-90 glow-yellow">
                 🐱 Follow Us
               </a>
-              <a href="https://dexscreener.com/base/0xCe44930086bf38a5dcB02A6b23C7BAE4C269Cb07" target="_blank" rel="noopener noreferrer"
+              <a href="https://dexscreener.com" target="_blank" rel="noopener noreferrer"
                 className="px-6 py-3 rounded-xl border border-wiki-border text-gray-300 hover:border-wiki-yellow/40 hover:text-wiki-yellow font-bold transition-all">
                 Dexscreener
               </a>
