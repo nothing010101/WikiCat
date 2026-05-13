@@ -4,12 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
-  { q: "What is the Wikicat Founder Pass?", a: "The Founder Pass is a limited NFT that grants you 1,000,000 $WIKI tokens upon minting. Only 5,000 passes exist, making early supporters the founding community of Wikicat." },
-  { q: "How do I mint?", a: "Visit the Mint page, connect your wallet (MetaMask or Coinbase Wallet), and pay 0.0011 ETH on Base network. You will receive 1 NFT and 1,000,000 $WIKI tokens instantly." },
+  { q: "What is Wikicat ($WIKI)?", a: "Wikicat is a community meme token launching on Base Chain. $WIKI is the primary token of the ecosystem, and Wikicat NFTs will be distributed as rewards to holders and community participants." },
+  { q: "How do I get Wikicat NFTs?", a: "Wikicat NFTs are distributed as rewards — not through a direct purchase. Once $WIKI launches, holders and active community members will be able to earn exclusive Wikicat NFTs that can be sold on any ERC-721 compatible marketplace." },
+  { q: "When is $WIKI launching?", a: "The $WIKI token launch is coming soon on Base Chain. Follow our official Twitter/X (@wikibasedcat) for the latest announcements and launch details." },
   { q: "Who owns Wikicat?", a: "Wikicat is a community-driven project. Ownership of the smart contracts has been structured for transparency. All contracts are viewable on Basescan." },
-  { q: "Is the contract audited?", a: "All contract addresses are publicly verifiable on Basescan. Token: 0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef, NFT: 0x5Ff980e0D8B1Ed57427cb1f44039649F7910327b." },
-  { q: "What is the use case for $WIKI?", a: "$WIKI is a community token. Holders gain early access to future Wikicat ecosystem developments, community governance, and any future utility the community decides." },
-  { q: "Can I sell my Founder Pass NFT?", a: "Yes! The Founder Pass NFT is a standard ERC-721 token on Base and can be transferred or listed on any compatible NFT marketplace." },
+  { q: "What is the use case for $WIKI?", a: "$WIKI is the community token of the Wikicat ecosystem. Holders gain early access to NFT rewards, community governance, and any future utility the community decides together." },
+  { q: "Can I sell my Wikicat NFT?", a: "Yes! Wikicat NFTs are standard ERC-721 tokens on Base and can be transferred or listed on any compatible NFT marketplace such as OpenSea." },
 ];
 
 export function FAQ() {
