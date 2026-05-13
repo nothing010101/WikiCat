@@ -21,7 +21,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 bg-wiki-yellow/10 border border-wiki-yellow/20 rounded-full px-5 py-2 mb-8"
           >
             <div className="w-2 h-2 bg-wiki-green rounded-full animate-pulse" />
-            <span className="text-wiki-yellow text-sm font-semibold">Now Live on Base Chain</span>
+            <span className="text-wiki-yellow text-sm font-semibold">Launching on Base Chain</span>
           </motion.div>
 
           <h1 className="text-7xl md:text-8xl lg:text-9xl font-black leading-none mb-2 text-white">
@@ -32,12 +32,12 @@ export function Hero() {
           </h2>
 
           <p className="text-gray-400 text-lg md:text-xl max-w-md mb-2 leading-relaxed">
-            The internet's cat has its own token.
+            The internet&apos;s cat has its own token.
           </p>
           <p className="text-gray-400 text-base max-w-md mb-8 leading-relaxed">
-            Mint your Founder Pass on Base Chain and get{" "}
-            <span className="text-wiki-yellow font-bold">1 NFT + 1,000,000 $WIKI</span> tokens.
-            Only <span className="text-white font-bold">5,000 slots</span> available.
+            <span className="text-wiki-yellow font-bold">$WIKI</span> token is launching on Base Chain.
+            Hold $WIKI and earn exclusive{" "}
+            <span className="text-white font-bold">NFT rewards</span>.
           </p>
 
           <div className="flex items-center gap-3 justify-center lg:justify-start mb-8">
@@ -50,13 +50,13 @@ export function Hero() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="/mint"
-              className="px-10 py-4 rounded-xl font-black text-xl bg-gradient-to-r from-wiki-yellow to-wiki-orange text-black hover:opacity-90 transition-all glow-yellow text-center">
-              🐱 MINT NOW
-            </a>
             <a href="#about"
+              className="px-10 py-4 rounded-xl font-black text-xl bg-gradient-to-r from-wiki-yellow to-wiki-orange text-black hover:opacity-90 transition-all glow-yellow text-center">
+              🐱 Learn More
+            </a>
+            <a href="#tokenomics"
               className="px-10 py-4 rounded-xl font-bold text-lg border border-wiki-border text-gray-300 hover:border-wiki-yellow/40 hover:text-wiki-yellow transition-all text-center">
-              Learn More
+              Tokenomics
             </a>
           </div>
         </motion.div>
