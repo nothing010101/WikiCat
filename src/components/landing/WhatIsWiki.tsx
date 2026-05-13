@@ -39,8 +39,9 @@ export function WhatIsWiki() {
               transition={{ delay: 0.1 }}
               className="text-gray-400 text-lg leading-relaxed mb-4"
             >
-              Wikicat ($WIKI) is a meme token on Base Chain built around the internet's oldest obsession — cats.
-              Early supporters get in through the Founder Pass NFT mint, the only way new $WIKI enters circulation.
+              Wikicat ($WIKI) is a meme token on Base Chain built around the internet&apos;s oldest obsession — cats.
+              100 billion $WIKI launched directly to liquidity via{" "}
+              <span className="text-wiki-yellow font-bold">bankr.bot</span> — no team cut, no presale, 100% community-owned.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -49,10 +50,9 @@ export function WhatIsWiki() {
               transition={{ delay: 0.15 }}
               className="text-gray-400 text-lg leading-relaxed mb-10"
             >
-              Each Founder Pass grants you{" "}
-              <span className="text-wiki-yellow font-bold">1 NFT + 1,000,000 $WIKI tokens</span> — on-chain,
-              transparent, yours forever. Only{" "}
-              <span className="text-white font-bold">5,000 slots</span>. First come, first served.
+              Hold <span className="text-wiki-yellow font-bold">$WIKI</span> and earn exclusive{" "}
+              <span className="text-white font-bold">Wikicat NFTs</span> as rewards.
+              Holders will be airdropped NFTs and will also be able to buy them directly via the website.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -61,14 +61,9 @@ export function WhatIsWiki() {
               transition={{ delay: 0.2 }}
               className="flex flex-wrap justify-center lg:justify-start gap-4"
             >
-              <a href="/mint"
+              <a href="https://x.com/wikibasedcat" target="_blank" rel="noopener noreferrer"
                 className="px-6 py-3 rounded-xl bg-gradient-to-r from-wiki-yellow to-wiki-orange text-black font-bold transition-all hover:opacity-90 glow-yellow">
-                🐱 Mint Founder Pass
-              </a>
-              <a href="https://basescan.org/address/0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef"
-                target="_blank" rel="noopener noreferrer"
-                className="px-6 py-3 rounded-xl border border-wiki-border text-gray-300 hover:border-wiki-yellow/40 hover:text-wiki-yellow font-bold transition-all">
-                Basescan
+                🐱 Follow Us
               </a>
               <a href="https://dexscreener.com" target="_blank" rel="noopener noreferrer"
                 className="px-6 py-3 rounded-xl border border-wiki-border text-gray-300 hover:border-wiki-yellow/40 hover:text-wiki-yellow font-bold transition-all">
