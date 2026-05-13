@@ -38,9 +38,9 @@ export function LandingHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href="/mint"
+          <a href="https://x.com/wikibasedcat" target="_blank" rel="noopener noreferrer"
             className="hidden md:inline-flex px-5 py-2 rounded-xl font-black text-sm bg-gradient-to-r from-wiki-yellow to-wiki-orange text-black hover:opacity-90 transition-all">
-            🐱 Mint Now
+            🐱 Follow Us
           </a>
           <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-gray-400 hover:text-white">
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -61,9 +61,9 @@ export function LandingHeader() {
               {link.label}
             </a>
           ))}
-          <a href="/mint"
+          <a href="https://x.com/wikibasedcat" target="_blank" rel="noopener noreferrer"
             className="inline-flex justify-center px-5 py-2.5 rounded-xl bg-gradient-to-r from-wiki-yellow to-wiki-orange text-black font-black">
-            🐱 Mint Now
+            🐱 Follow Us
           </a>
         </motion.div>
       )}
