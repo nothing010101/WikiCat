@@ -13,7 +13,7 @@ export function Footer() {
               <span className="text-wiki-yellow text-sm">$WIKI</span>
             </a>
             <p className="text-gray-500 text-sm leading-relaxed">
-              The internet&apos;s cat has its own token. Launching on Base Chain via bankr.bot.
+              The internet&apos;s cat has its own token. Launching on Base Chain via ape.store.
               Hold $WIKI and earn exclusive NFT rewards.
             </p>
             <div className="flex gap-3 mt-4">
@@ -29,9 +29,9 @@ export function Footer() {
             <p className="text-xs text-gray-500 uppercase tracking-widest mb-4 font-semibold">Token Info</p>
             <div className="space-y-2 text-sm text-gray-500">
               <div className="flex justify-between"><span>Network</span><span className="text-white">Base Mainnet</span></div>
-              <div className="flex justify-between"><span>Total Supply</span><span className="text-white">100,000,000,000</span></div>
+              <div className="flex justify-between"><span>Total Supply</span><span className="text-white">1,000,000,000</span></div>
               <div className="flex justify-between"><span>Standard</span><span className="text-white">ERC20</span></div>
-              <div className="flex justify-between"><span>Launch</span><span className="text-wiki-yellow">100% LP via bankr.bot</span></div>
+              <div className="flex justify-between"><span>Launch</span><span className="text-wiki-yellow">100% LP via ape.store</span></div>
             </div>
           </div>
         </div>
