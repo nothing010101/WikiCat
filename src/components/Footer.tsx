@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 export function Footer() {
@@ -32,16 +31,16 @@ export function Footer() {
             </p>
             <div className="space-y-2">
               {[
-                { label: "Basescan — $WIKI", href: "https://basescan.org/address/0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef" },
-                { label: "Basescan — Founder NFT", href: "https://basescan.org/address/0x5ff980e0d8b1ed57427cb1f44039649f7910327b" },
+                { label: "Basescan — $WIKI Token", href: "https://basescan.org/token/0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef" },
+                { label: "Basescan — Founder NFT", href: "https://basescan.org/address/0x5Ff980e0D8B1ED57427cb1f44039649F7910327b" },
+                { label: "Basescan — Mint Contract", href: "https://basescan.org/address/0xa65Bd77d0d78CB253EAd26b61Ae183c5AD09b924" },
                 { label: "OpenSea Collection", href: "#" },
-                { label: "Source Code (GitHub)", href: "#" },
               ].map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={link.href !== "#" ? "_blank" : undefined}
+                  rel={link.href !== "#" ? "noopener noreferrer" : undefined}
                   className="block text-sm text-gray-500 hover:text-wiki-yellow transition-colors"
                 >
                   {link.label}
