@@ -31,6 +31,7 @@ export function Header() {
           <a href="#mint" className="hover:text-wiki-yellow transition-colors">Mint</a>
           <a href="#how-it-works" className="hover:text-wiki-yellow transition-colors">How It Works</a>
           <a href="#dashboard" className="hover:text-wiki-yellow transition-colors">Dashboard</a>
+          <a href="/docs" className="hover:text-wiki-yellow transition-colors font-medium">Docs</a>
         </nav>
 
         <motion.div
