@@ -52,8 +52,7 @@ export default function MintPage() {
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }}
             className="flex flex-wrap justify-center gap-3 mb-10">
-            <a
-              href="https://basescan.org/address/0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef"
+            <a href="https://basescan.org/token/0xB97f69Cb79978725E3e20e72b024639e7173A44F"
               target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-2 bg-wiki-card border border-wiki-border hover:border-wiki-yellow/40 rounded-full px-4 py-2 text-sm text-gray-400 hover:text-wiki-yellow transition-all">
               <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current" xmlns="http://www.w3.org/2000/svg">
@@ -61,8 +60,7 @@ export default function MintPage() {
               </svg>
               Basescan — $WIKI Token
             </a>
-            <a
-              href="https://basescan.org/address/0x5ff980e0d8b1ed57427cb1f44039649f7910327b"
+            <a href="https://basescan.org/address/0x404de9409b77341434e95b4e502407742edb3d59"
               target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-2 bg-wiki-card border border-wiki-border hover:border-wiki-yellow/40 rounded-full px-4 py-2 text-sm text-gray-400 hover:text-wiki-yellow transition-all">
               <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current" xmlns="http://www.w3.org/2000/svg">
