@@ -11,6 +11,7 @@ export function LandingHeader() {
     { href: "#features", label: "Features" },
     { href: "#tokenomics", label: "Tokenomics" },
     { href: "#faq", label: "FAQ" },
+    { href: "/docs", label: "Docs" },
   ];
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-wiki-border bg-wiki-dark/80 backdrop-blur-xl">
