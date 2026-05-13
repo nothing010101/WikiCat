@@ -46,14 +46,25 @@ export const MINT_CONTRACT_ABI = [
   { inputs: [], name: "withdraw", outputs: [], stateMutability: "nonpayable", type: "function" },
   { inputs: [{ name: "batchSize", type: "uint256" }], name: "issueRefunds", outputs: [], stateMutability: "nonpayable", type: "function" },
   {
+    inputs: [
+      { name: "offset", type: "uint256" },
+      { name: "limit", type: "uint256" },
+    ],
+    name: "getMinters",
+    outputs: [
+      { name: "list", type: "address[]" },
+      { name: "total", type: "uint256" },
+    ],
+    stateMutability: "view", type: "function",
+  },
+  {
     anonymous: false,
     inputs: [
       { indexed: true, name: "user", type: "address" },
       { indexed: false, name: "quantity", type: "uint256" },
       { indexed: false, name: "totalPaid", type: "uint256" },
-      { indexed: false, name: "firstTokenId", type: "uint256" },
     ],
-    name: "Minted", type: "event",
+    name: "SlotReserved", type: "event",
   },
   {
     anonymous: false,
@@ -65,10 +76,11 @@ export const MINT_CONTRACT_ABI = [
   },
 ] as const;
 
-// ✅ MintContract v2 — deployed & verified on Base Chain
-// https://basescan.org/address/0xd2a0240Ab057C9155eeC5f8f689c012917443B92#code
+// MintContract v3 — deployed & verified on Base Chain
+// https://basescan.org/address/0x45D8750Ae28C0875056b715497d92395FF7C8AA2#code
+// Mint active — deadline: 2026-05-15T08:30:19Z (15/5/2026 15:30 WIB)
 export const CONTRACT_ADDRESSES = {
   wikiToken:    (process.env.NEXT_PUBLIC_WIKI_TOKEN_ADDRESS    || "0xb19FdC19DB6F3eE33C83CBaa01781B22C3231cef") as `0x${string}`,
   founderNFT:   (process.env.NEXT_PUBLIC_FOUNDER_NFT_ADDRESS   || "0x5Ff980e0D8B1ED57427cb1f44039649F7910327b") as `0x${string}`,
-  mintContract: (process.env.NEXT_PUBLIC_MINT_CONTRACT_ADDRESS || "0xd2a0240Ab057C9155eeC5f8f689c012917443B92") as `0x${string}`,
+  mintContract: (process.env.NEXT_PUBLIC_MINT_CONTRACT_ADDRESS || "0x45D8750Ae28C0875056b715497d92395FF7C8AA2") as `0x${string}`,
 };
