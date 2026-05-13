@@ -224,8 +224,8 @@ export default function DocsPage() {
                     {
                       name: "$WIKI Token Contract",
                       standard: "ERC20",
-                      address: "0xB97f69Cb79978725E3e20e72b024639e7173A44F",
-                      link: "https://basescan.org/token/0xB97f69Cb79978725E3e20e72b024639e7173A44F",
+                      address: "0xCe44930086bf38a5dcB02A6b23C7BAE4C269Cb07",
+                      link: "https://basescan.org/token/0xCe44930086bf38a5dcB02A6b23C7BAE4C269Cb07",
                       desc: "The primary fungible token contract. Handles transfers and burning of $WIKI."
                     },
                   ].map((c) => (
